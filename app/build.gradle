@@ -1,6 +1,5 @@
 apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.android.databinding'
 
 def cfg = rootProject.ext.configuration
@@ -31,7 +30,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    buildToolsVersion '23.0.3'
+    buildToolsVersion '25.0.3'
 }
 
 //noinspection GroovyAssignabilityCheck
@@ -48,7 +47,7 @@ dependencies {
     compile "com.squareup.retrofit:converter-gson:${libs.retrofit}"
     compile "com.squareup.retrofit:adapter-rxjava:${libs.retrofit}"
 
-    apt "com.google.dagger:dagger-compiler:${libs.dagger}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${libs.dagger}"
 
     // Android
     compile "com.android.support:design:${libs.supportVersion}"
@@ -75,7 +74,7 @@ dependencies {
         exclude module: 'recyclerview-v7'
     }
 
-    androidTestApt "com.google.dagger:dagger-compiler:${libs.dagger}"
+    androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:${libs.dagger}"
 
 }
 

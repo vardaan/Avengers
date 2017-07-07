@@ -1,6 +1,7 @@
 apply plugin: 'java'
 
 def libs = rootProject.ext.libraries;
+sourceCompatibility = 1.7
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
